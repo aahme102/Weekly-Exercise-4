@@ -17,3 +17,30 @@ name_branch
 library(readr)
 library(tidyverse)
 library(ggplot2)
+library(dplyr)
+
+olympics_data <- read.csv("Olympics.csv")
+
+# Question 6
+
+# 6a. Calculate a new variable, called ‘total.medals’, which is the sum of gold, silver, and bronze, and add it to the Olympic dataset. (2pts)
+
+olympics_data1a = olympics_data %>%
+  mutate(total.medals = sum(gold + silver + bronze, na.rm = TRUE)) 
+  
+# 6b. For each country, how many gold medals has it won? (2pts)
+
+by_country_gold = olympics_data1a %>%
+  group_by(country) %>%
+  summarise(gold_won = sum(gold, na.rm = T)) 
+  
+# 6c. For each year, how many total medals were given out? (2pts)
+
+by_year_totmedals <- olympics_data1a %>%
+  group_by(year) %>%
+  summarise(yearly_totmedals = sum(total.medals, na.rm = T))
+  
+
+
+  
+
