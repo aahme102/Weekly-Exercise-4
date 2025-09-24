@@ -40,7 +40,40 @@ by_year_totmedals <- olympics_data1a %>%
   group_by(year) %>%
   summarise(yearly_totmedals = sum(total.medals, na.rm = T))
   
-
-
   
+# 7. Go to the main branch and use the same “Olympics.csv” dataset to answer the following questions. Write your code in the previously created “WEEKLYEXERCISE4” R Script.
+
+olympics_data <- read.csv("Olympics.csv")
+
+# a. Which countries had the largest delegation of athletes in 1992? Create a tibble that contains only the variables country and athletes. (2pts)
+
+largest_delegation_1992 = olympics_data %>%
+  filter(year == 1992) %>%
+  select(country, athletes) %>%
+  arrange(desc(athletes))
+
+# b. For the following five countries, plot the number of gold medals earned over time:United States, France, Germany, Russia, and China. (4pts)
+
+countries = c("United", "France", "Germany", "Russia", "China")
+
+selected_countries = olympics_data %>%
+  filter(str_detect(country, str_c(countries, collapse = "|")))
+
+gold_by_year = selected_countries %>%
+  group_by(country, year) %>%
+  summarize(total_gold = sum(gold, na.rm = TRUE)) %>%
+  ungroup()
+
+ggplot(gold_by_year, aes(x = year, y = total_gold, color = country)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  labs(
+    title = "Gold Medals Over The Years",
+    x = "Year",
+    y = "Number of Gold Medals",
+    color = "Country"
+  ) +
+  theme_minimal()
+
+
 
