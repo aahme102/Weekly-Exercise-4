@@ -77,3 +77,5 @@ ggplot(gold_by_year, aes(x = year, y = total_gold, color = country)) +
   theme_minimal()
 
 
+
+
