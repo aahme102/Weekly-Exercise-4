@@ -18,7 +18,6 @@ library(readr)
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
-library(stringr)
 
 olympics_data <- read.csv("Olympics.csv")
 
@@ -41,7 +40,7 @@ by_year_totmedals <- olympics_data1a %>%
   group_by(year) %>%
   summarise(yearly_totmedals = sum(total.medals, na.rm = T))
   
-
+  
 # 7. Go to the main branch and use the same “Olympics.csv” dataset to answer the following questions. Write your code in the previously created “WEEKLYEXERCISE4” R Script.
 
 olympics_data <- read.csv("Olympics.csv")
@@ -75,7 +74,6 @@ ggplot(gold_by_year, aes(x = year, y = total_gold, color = country)) +
     color = "Country"
   ) +
   theme_minimal()
-
 
 
 
