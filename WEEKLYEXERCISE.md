@@ -11,3 +11,4 @@ Citations
 Wilson, B., & Chakraborty, A. (2019). Planning Smart(er) Cities: The Promise of Civic Technology. Journal of Urban Technology, 1–23. https://doi.org/10.1080/10630732.2019.1631097
 Stepan Ilyin. (2024, July 4). Civic Tech. Wallarm.com; Wallarm. https://www.wallarm.com/what/civic-tech
 Wood, C. (2016, August 16). What is Civic Tech? Www.govtech.com. https://www.govtech.com/civic/What-is-Civic-Tech.html
+
